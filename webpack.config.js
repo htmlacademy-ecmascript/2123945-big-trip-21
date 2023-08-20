@@ -1,12 +1,13 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
+const HtmlPlugin = require('html-webpack-plugin');
 
 module.exports = {
   // Точка входа
   entry: './src/main.js',
   output: {
     // Имя бандла
-    filename: 'bundle.js',
+    filename: 'bundle.[contenthash].js',
     // Директория для файлов сборки
     path: path.resolve(__dirname, 'build'),
     // Удаляем предыдущую сборку перед созданием новой
@@ -16,8 +17,18 @@ module.exports = {
   devtool: 'source-map',
   // Подключаем плагины
   plugins: [
+    new HtmlPlugin({
+      template: 'public/index.html',
+    }),
     new CopyPlugin({
-      patterns: [{ from: 'public' }],
+      patterns: [
+        {
+          from: 'public',
+          globOptions: {
+            ignore: ['**/index.html'],
+          },
+        },
+      ],
     }),
   ],
   module: {
