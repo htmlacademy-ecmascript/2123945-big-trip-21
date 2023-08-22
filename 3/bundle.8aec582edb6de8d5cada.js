@@ -27,5 +27,7 @@
         <input id="filter-past" class="trip-filters__filter-input  visually-hidden" type="radio" name="trip-filter" value="past">
         <label class="trip-filters__filter-label" for="filter-past">Past</label>
       </div>
-    `}});const r=document.querySelector("brief-view"),l=document.querySelector("filter-view");r.render(),l.render()})();
-//# sourceMappingURL=bundle.255eca4993f469ee6509.js.map
+    `}});customElements.define("add-button-view",class extends t{createHtml(){return i`
+      <button class="trip-main__event-add-btn  btn  btn--big  btn--yellow" type="button">New event</button>
+    `}});const r=document.querySelector("brief-view"),l=document.querySelector("filter-view"),s=document.querySelector("add-button-view");r.render(),l.render(),s.render()})();
+//# sourceMappingURL=bundle.8aec582edb6de8d5cada.js.map
