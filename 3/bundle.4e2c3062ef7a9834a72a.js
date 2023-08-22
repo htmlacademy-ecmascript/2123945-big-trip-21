@@ -54,5 +54,9 @@
         <input id="sort-offer" class="trip-sort__input  visually-hidden" type="radio" name="trip-sort" value="sort-offer" disabled="">
         <label class="trip-sort__btn" for="sort-offer">Offers</label>
       </div>
-    `}});const i=document.querySelector("brief-view"),s=document.querySelector("filter-view"),l=document.querySelector("add-button-view"),a=document.querySelector("sort-view");i.render(),s.render(),l.render(),a.render()})();
-//# sourceMappingURL=bundle.1b86dde40c4e6add3070.js.map
+    `}});class i extends e{constructor(){super()}createHtml(){return r`
+
+    `}}customElements.define("card-view",i);const s=i;class l extends e{constructor(){super()}createHtml(){return r`
+
+    `}}customElements.define("editor-view",l);const a=l;customElements.define("list-view",class extends e{constructor(){super(),this.classList.add("trip-list"),this.setAttribute("role","list")}render(){const t=new Array(4).fill().map(((t,e)=>{const r=0===e?new a:new s;return r.classList.add("trip-list__item"),r.setAttribute("role","listitem"),r.render(),r}));this.replaceChildren(...t)}});const n=document.querySelector("brief-view"),o=document.querySelector("filter-view"),d=document.querySelector("add-button-view"),p=document.querySelector("sort-view"),c=document.querySelector("list-view");n.render(),o.render(),d.render(),p.render(),c.render()})();
+//# sourceMappingURL=bundle.4e2c3062ef7a9834a72a.js.map
