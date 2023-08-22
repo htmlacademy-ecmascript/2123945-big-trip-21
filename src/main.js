@@ -1,10 +1,9 @@
-// import NewTripInfoView from "./view/trip-info-view.js";
-// import NewFilterView from "./view/filter-view.js";
-// import BoardPresenter
+import './views/brief-view.js';
 
-// import { render } from "./render";
-// import NewEventListView from "./view/event-list-view.js";
+/**
+ * @type {import('./views/brief-view').default}
+ */
 
-// import NewPointEditView from "./view/point-edit-view.js";
-// import NewPointView from "./view/point-view.js";
-// import NewSortView from "./view/sort-view.js";
+const BriefView = document.querySelector('brief-view');
+
+BriefView.render();
