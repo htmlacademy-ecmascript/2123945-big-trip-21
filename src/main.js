@@ -8,9 +8,9 @@ import AppModel from './models/app-model.js';
 const appModel = new AppModel();
 
 appModel.ready().then(() => {
-  console.log(appModel.getPoints());
-  console.log(appModel.getDestinations());
-  console.log(appModel.getOfferGroups());
+  // console.log(appModel.getPoints());
+  // console.log(appModel.getDestinations());
+  // console.log(appModel.getOfferGroups());
 });
 
 /**
