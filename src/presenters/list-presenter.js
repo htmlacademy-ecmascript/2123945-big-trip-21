@@ -4,7 +4,7 @@ import Presenter from './presenter.js';
  * @typedef {import('../views/list-view').default} View
  * @typedef {import('../models/app-model').default} Model
  *
- * @extends {Presenter<View, Model>}
+ * @extends {Presenter <View, Model>}
  */
 class ListPresenter extends Presenter {
   /**
