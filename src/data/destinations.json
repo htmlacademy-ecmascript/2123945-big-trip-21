@@ -1,0 +1,158 @@
+[
+  {
+    "id": "ada95d30-aa92-43ea-9149-718cae143e28",
+    "description": "Paris - a true asian pearl",
+    "name": "Paris",
+    "pictures": [
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/3.jpg",
+        "description": "Paris in a middle of Europe"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/20.jpg",
+        "description": "Paris with a beautiful old town"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/9.jpg",
+        "description": "Paris is a beautiful city"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/6.jpg",
+        "description": "Paris is a beautiful city"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/4.jpg",
+        "description": "Paris a perfect place to stay with a family"
+      }
+    ]
+  },
+  {
+    "id": "fca87a37-8a40-40cd-afcb-a188d848de7b",
+    "description": "Munich - a true asian pearl",
+    "name": "Munich",
+    "pictures": [
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/19.jpg",
+        "description": "Munich a true asian pearl"
+      }
+    ]
+  },
+  {
+    "id": "88de64f6-8144-4130-8494-380e1431b4ce",
+    "description": "Rotterdam - famous for its crowded street markets with the best street food in Asia",
+    "name": "Rotterdam",
+    "pictures": [
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/17.jpg",
+        "description": "Rotterdam with a beautiful old town"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/3.jpg",
+        "description": "Rotterdam in a middle of Europe"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/18.jpg",
+        "description": "Rotterdam famous for its crowded street markets with the best street food in Asia"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/2.jpg",
+        "description": "Rotterdam with a beautiful old town"
+      }
+    ]
+  },
+  {
+    "id": "c2b34d85-b20e-4d86-a177-392261bc31f2",
+    "description": "Vien - famous for its crowded street markets with the best street food in Asia",
+    "name": "Vien",
+    "pictures": [
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/3.jpg",
+        "description": "Vien famous for its crowded street markets with the best street food in Asia"
+      }
+    ]
+  },
+  {
+    "id": "e4075d80-7af4-4c76-8599-f03d98d4048f",
+    "description": "",
+    "name": "Kioto",
+    "pictures": []
+  },
+  {
+    "id": "08adc35a-deec-4c3a-b0bf-4709b6b850f7",
+    "description": "Oslo - a true asian pearl",
+    "name": "Oslo",
+    "pictures": [
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/9.jpg",
+        "description": "Oslo with an embankment of a mighty river as a centre of attraction"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/15.jpg",
+        "description": "Oslo famous for its crowded street markets with the best street food in Asia"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/5.jpg",
+        "description": "Oslo middle-eastern paradise"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/2.jpg",
+        "description": "Oslo with an embankment of a mighty river as a centre of attraction"
+      }
+    ]
+  },
+  {
+    "id": "dde3ab4c-5cec-4cb0-b8bf-1695b7b4e190",
+    "description": "Amsterdam - full of of cozy canteens where you can try the best coffee in the Middle East",
+    "name": "Amsterdam",
+    "pictures": [
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/1.jpg",
+        "description": "Amsterdam for those who value comfort and coziness"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/4.jpg",
+        "description": "Amsterdam famous for its crowded street markets with the best street food in Asia"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/6.jpg",
+        "description": "Amsterdam full of of cozy canteens where you can try the best coffee in the Middle East"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/5.jpg",
+        "description": "Amsterdam a perfect place to stay with a family"
+      },
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/6.jpg",
+        "description": "Amsterdam with a beautiful old town"
+      }
+    ]
+  },
+  {
+    "id": "6a95d228-c660-4b73-a04e-c1a9eed4b771",
+    "description": "Barcelona - middle-eastern paradise",
+    "name": "Barcelona",
+    "pictures": [
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/15.jpg",
+        "description": "Barcelona with a beautiful old town"
+      }
+    ]
+  },
+  {
+    "id": "3f4fb5bd-a207-42f3-b54f-32cb36e438b0",
+    "description": "Saint Petersburg - a perfect place to stay with a family",
+    "name": "Saint Petersburg",
+    "pictures": []
+  },
+  {
+    "id": "97eba8a3-75dc-4902-80d8-0bba916e1735",
+    "description": "Valencia - with a beautiful old town",
+    "name": "Valencia",
+    "pictures": [
+      {
+        "src": "https://21.objects.pages.academy/static/destinations/11.jpg",
+        "description": "Valencia in a middle of Europe"
+      }
+    ]
+  }
+]
