@@ -155,16 +155,18 @@ class CardView extends View {
       </button>
     `;
   }
-}
 
   /**
-   *
    * @param {PointerEvent & {
-  *  tagret: Element;
-  * }} event
-  */
-onClick(event) {};
-
+   *  target: Element
+   * }} event
+   */
+  onClick(event) {
+    if (event.target.closest('.event__rollup-btn')) {
+      this.dispatch('open');
+    }
+  }
+}
 
 customElements.define('card-view', CardView);
 
