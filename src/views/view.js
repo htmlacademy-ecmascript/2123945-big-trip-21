@@ -1,5 +1,5 @@
 /**
- * @tem plate State
+ * @template State
  */
 class View extends HTMLElement {
   constructor() {
