@@ -1,5 +1,5 @@
 /**
- * @tem plate State
+ * @template State
  */
 class View extends HTMLElement {
   constructor() {
@@ -29,6 +29,21 @@ class View extends HTMLElement {
    */
   createHtml() {
     return '';
+  }
+
+  /**
+   * @param {string} type
+   * @param {any} detail
+   * @returns {boolean}
+   */
+  dispatch(type, detail = null) {
+    const event = new CustomEvent(type, {
+      detail,
+      bubbles: true,
+      cancelable: true
+    });
+
+    return this.dispatchEvent(event);
   }
 }
 
