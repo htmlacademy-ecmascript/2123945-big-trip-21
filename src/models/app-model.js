@@ -44,10 +44,7 @@ class AppModel extends Model {
     this.points = points;
     this.destinations = destinations;
     // @ts-ignore
-    this.offerGroups = offerGroups;
-    console.table(
-      this.getPoints({sort: 'time'}).map((point) => point.durationInMs)
-    );
+    this.offerGroups = offerGroups;ы
   }
 
   /**
