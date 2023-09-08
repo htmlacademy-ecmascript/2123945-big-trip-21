@@ -44,7 +44,7 @@ class AppModel extends Model {
     this.points = points;
     this.destinations = destinations;
     // @ts-ignore
-    this.offerGroups = offerGroups;ы
+    this.offerGroups = offerGroups;
   }
 
   /**
