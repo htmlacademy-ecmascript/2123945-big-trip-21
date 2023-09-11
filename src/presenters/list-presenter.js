@@ -83,15 +83,15 @@ class ListPresenter extends Presenter {
   }
 
   /**
-   *
    * @param {CustomEvent & {
-   * target: import('../views/card-view').default
+   *  target: import('../views/card-view').default
    * }} event
    */
   onViewOpen(event) {
     const params = this.navigation.getParams();
 
     params.edit = event.target.state.id;
+
     this.navigation.setParams(params);
   }
 
@@ -99,6 +99,7 @@ class ListPresenter extends Presenter {
     const params = this.navigation.getParams();
 
     delete params.edit;
+
     this.navigation.setParams(params);
   }
 
@@ -115,17 +116,24 @@ class ListPresenter extends Presenter {
     card.render();
   }
 
-
   /**
    * @param {CustomEvent<HTMLInputElement> & {
-  *  target: import('../views/editor-view').default
-  * }} event
-  */
+   *  target: import('../views/editor-view').default
+   * }} event
+   */
   onViewEdit(event) {
     const editor = event.target;
     const input = event.detail;
 
     if (input.name === 'event-type') {
+      const offerGroups = this.model.getOfferGroups();
+      const {offers} = offerGroups.find((group) => group.type === input.value);
+
+      editor.state.offers = offers.map((offer) => ({
+        ...offer,
+        isSelected: false
+      }));
+
       editor.state.types.forEach((type) => {
         type.isSelected = type.value === input.value;
       });
