@@ -16,6 +16,7 @@ class ListPresenter extends Presenter {
     this.view.addEventListener('open', this.onViewOpen.bind(this));
     this.view.addEventListener('close', this.onViewClose.bind(this));
     this.view.addEventListener('favorite', this.onViewFavorite.bind(this));
+    this.view.addEventListener('edit', this.onViewEdit.bind(this));
   }
 
   /**
@@ -82,15 +83,15 @@ class ListPresenter extends Presenter {
   }
 
   /**
-   *
    * @param {CustomEvent & {
-   * target: import('../views/card-view').default
+   *  target: import('../views/card-view').default
    * }} event
    */
   onViewOpen(event) {
     const params = this.navigation.getParams();
 
     params.edit = event.target.state.id;
+
     this.navigation.setParams(params);
   }
 
@@ -98,6 +99,7 @@ class ListPresenter extends Presenter {
     const params = this.navigation.getParams();
 
     delete params.edit;
+
     this.navigation.setParams(params);
   }
 
@@ -112,6 +114,41 @@ class ListPresenter extends Presenter {
     card.state.isFavorite = !card.state.isFavorite;
     await this.model.updatePoint(this.createPoint(card.state));
     card.render();
+  }
+
+  /**
+   * @param {CustomEvent<HTMLInputElement> & {
+   *  target: import('../views/editor-view').default
+   * }} event
+   */
+  onViewEdit(event) {
+    const editor = event.target;
+    const input = event.detail;
+
+    if (input.name === 'event-type') {
+      const offerGroups = this.model.getOfferGroups();
+      const {offers} = offerGroups.find((group) => group.type === input.value);
+
+      editor.state.offers = offers.map((offer) => ({
+        ...offer,
+        isSelected: false
+      }));
+
+      editor.state.types.forEach((type) => {
+        type.isSelected = type.value === input.value;
+      });
+
+      editor.render();
+      return;
+    }
+
+    if (input.name === 'event-destination') {
+      editor.state.destinations.forEach((destination) => {
+        destination.isSelected = destination.name === input.value;
+      });
+
+      editor.render();
+    }
   }
 }
 
