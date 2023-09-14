@@ -1,8 +1,8 @@
-import Model from './model.js';
-import PointModel from './point-model.js';
-import points from '../data/points.json';
-import destinations from '../data/destinations.json';
-import offerGroups from '../data/offers.json';
+import Model from "./model.js";
+import PointModel from "./point-model.js";
+import points from "../data/points.json";
+import destinations from "../data/destinations.json";
+import offerGroups from "../data/offers.json";
 
 class AppModel extends Model {
   constructor() {
@@ -28,9 +28,10 @@ class AppModel extends Model {
      */
     this.filterCallbacks = {
       everything: () => true,
-      future: () => true,
-      present: () => true,
-      past: () => true
+      future: (point) => point.dateFromInMs > Date.now(),
+      present: (point) =>
+        point.dateFromInMs <= Date.now() && point.dateToInMs >= Date.now(),
+      past: (point) => point.dateToInMs < Date.now(),
     };
 
     /**
@@ -41,7 +42,7 @@ class AppModel extends Model {
       event: () => 0,
       time: (pointA, pointB) => pointB.durationInMs - pointA.durationInMs,
       price: (pointA, pointB) => pointB.basePrice - pointA.basePrice,
-      offers: () => 0
+      offers: () => 0,
     };
   }
 
