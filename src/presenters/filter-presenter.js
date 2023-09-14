@@ -1,4 +1,4 @@
-import Presenter from './presenter.js';
+import Presenter from "./presenter.js";
 
 /**
  * @typedef {import('../views/filter-view').default} View
@@ -23,14 +23,16 @@ class FilterPresenter extends Presenter {
     /**
      * @type{Array<FilterType>}
      */
-    const values = ['everything', 'future', 'present', 'past'];
+    const values = ["everything", "future", "present", "past"];
+    const { filter = "everything" } = this.navigation.getParams();
+
     const items = values.map((value) => ({
       value,
-      isSelected: value === 'everything',
-      isDisabled: value === 'future',
+      isSelected: value === filter,
+      isDisabled: value === "future",
     }));
 
-    this.view.setState({items});
+    this.view.setState({ items });
   }
 }
 
