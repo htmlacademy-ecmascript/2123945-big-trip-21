@@ -18,6 +18,7 @@ class EditorView extends View {
 
     this.addEventListener('click', this.onClick);
     this.addEventListener('change', this.onChange);
+    this.addEventListener('submit', this.onSubmit);
   }
 
   connectedCallback() {
@@ -178,7 +179,6 @@ class EditorView extends View {
         <input
           class="event__input  event__input--price"
           id="event-price-1"
-          type="text"
           type="number"
           min="0"
           name="event-price"
@@ -307,6 +307,14 @@ class EditorView extends View {
    */
   onChange(event) {
     this.dispatch('edit', event.target);
+  }
+
+  /**
+   * @param {SubmitEvent} event
+   */
+  onSubmit(event) {
+    event.preventDefault();
+    this.dispatch('save');
   }
 }
 
