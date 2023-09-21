@@ -1,8 +1,8 @@
-import Model from "./model.js";
-import PointModel from "./point-model.js";
-import points from "../data/points.json";
-import destinations from "../data/destinations.json";
-import offerGroups from "../data/offers.json";
+import Model from './model.js';
+import PointModel from './point-model.js';
+import points from '../data/points.json';
+import destinations from '../data/destinations.json';
+import offerGroups from '../data/offers.json';
 
 class AppModel extends Model {
   constructor() {
