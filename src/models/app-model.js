@@ -29,9 +29,8 @@ class AppModel extends Model {
     this.filterCallbacks = {
       everything: () => true,
       future: (point) => point.dateFromInMs > Date.now(),
-      present: (point) =>
-        point.dateFromInMs <= Date.now() && point.dateToInMs >= Date.now(),
-      past: (point) => point.dateToInMs < Date.now(),
+      present: (point) => point.dateFromInMs <= Date.now() && point.dateToInMs >= Date.now(),
+      past: (point) => point.dateToInMs < Date.now()
     };
 
     /**
@@ -42,7 +41,7 @@ class AppModel extends Model {
       event: () => 0,
       time: (pointA, pointB) => pointB.durationInMs - pointA.durationInMs,
       price: (pointA, pointB) => pointB.basePrice - pointA.basePrice,
-      offers: () => 0,
+      offers: () => 0
     };
   }
 
@@ -81,6 +80,19 @@ class AppModel extends Model {
    */
   createPoint(data = Object.create(null)) {
     return new PointModel(data);
+  }
+
+  /**
+   * @param {PointModel} model
+   * @returns {Promise<void>}
+   */
+  async addPoint(model) {
+    // TODO: Добавить данные на сервере
+    const data = model.toJSON();
+
+    data.id = crypto.randomUUID();
+
+    this.points.push(data);
   }
 
   /**
