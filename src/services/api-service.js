@@ -2,7 +2,7 @@ import Service from './service.js';
 
 class ApiService extends Service {
   /**
-   * @param {Partial<import('./service').Options>} options
+   * @param {Partial<import('./service.js').Options>} options
    */
   constructor(options) {
     super({
