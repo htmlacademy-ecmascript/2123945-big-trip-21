@@ -1,70 +1,59 @@
-/**
- * Класс для отправки запросов к серверу
- */
-export default class ApiService {
+import Service from './service.js';
+import {sanitize} from '../utilities.js';
+
+class ApiService extends Service {
   /**
-   * @param {string} endPoint Адрес сервера
-   * @param {string} authorization Авторизационный токен
+   * @param {Partial<import('./service').Options>} options
    */
-  constructor(endPoint, authorization) {
-    this._endPoint = endPoint;
-    this._authorization = authorization;
+  constructor(options) {
+    super({
+      baseUrl: 'https://21.objects.pages.academy/big-trip/',
+      authorization: '',
+      minResponseTime: 500,
+      ...options
+    });
   }
 
   /**
-   * Метод для отправки запроса к серверу
-   * @param {Object} config Объект с настройками
-   * @param {string} config.url Адрес относительно сервера
-   * @param {string} [config.method] Метод запроса
-   * @param {string} [config.body] Тело запроса
-   * @param {Headers} [config.headers] Заголовки запроса
-   * @returns {Promise<Response>}
+   * @returns {Promise<Array<Point>>}
    */
-  async _load({
-    url,
-    method = 'GET',
-    body = null,
-    headers = new Headers(),
-  }) {
-    headers.append('Authorization', this._authorization);
+  async getPoints() {
+    const response = await this.request('points');
 
-    const response = await fetch(
-      `${this._endPoint}/${url}`,
-      {method, body, headers},
-    );
-
-    try {
-      ApiService.checkStatus(response);
-      return response;
-    } catch (err) {
-      ApiService.catchError(err);
-    }
+    return sanitize(await response.json());
   }
 
   /**
-   * Метод для обработки ответа
-   * @param {Response} response Объект ответа
-   * @returns {Promise}
+   * @param {Point} data
+   * @returns {Promise<Point>}
    */
-  static parseResponse(response) {
-    return response.json();
+  async addPoint(data) {
+    const response = await this.request('points', {
+      method: 'post',
+      headers: {'content-type': 'application/json'},
+      body: JSON.stringify(data)
+    });
+
+    return sanitize(await response.json());
   }
 
   /**
-   * Метод для проверки ответа
-   * @param {Response} response Объект ответа
+   * @returns {Promise<Array<Destination>>}
    */
-  static checkStatus(response) {
-    if (!response.ok) {
-      throw new Error(`${response.status}: ${response.statusText}`);
-    }
+  async getDestinations() {
+    const response = await this.request('destinations');
+
+    return sanitize(await response.json());
   }
 
   /**
-   * Метод для обработки ошибок
-   * @param {Error} err Объект ошибки
+   * @returns {Promise<Array<OfferGroup>>}
    */
-  static catchError(err) {
-    throw err;
+  async getOfferGroups() {
+    const response = await this.request('offers');
+
+    return sanitize(await response.json());
   }
 }
+
+export default ApiService;
