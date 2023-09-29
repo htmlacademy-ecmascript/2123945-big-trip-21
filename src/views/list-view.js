@@ -7,7 +7,7 @@ import EditorView from './editor-view.js';
  * @template Option
  * @typedef {Option & {
  *  isSelected: boolean
- *  }} Selectable
+ * }} Selectable
  */
 
 /**
@@ -25,6 +25,7 @@ import EditorView from './editor-view.js';
  *  offers: Array<Selectable<Offer>>
  *  isFavorite: boolean
  *  isEditable: boolean
+ *  isSaving?: boolean
  * }} ItemState
  *
  * @typedef {{
