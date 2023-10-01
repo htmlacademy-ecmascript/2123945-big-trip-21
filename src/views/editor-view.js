@@ -192,8 +192,15 @@ class EditorView extends View {
    * @returns {string}
    */
   createSubmitButtonHtml() {
+    const {isSaving} = this.state;
+
     return html`
-      <button class="event__save-btn  btn  btn--blue" type="submit">Save</button>
+      <button
+        class="event__save-btn  btn  btn--blue"
+        type="submit"
+        ${isSaving ? 'disabled' : ''}>
+        ${isSaving ? 'Saving...' : 'Save' }
+      </button>
     `;
   }
 
@@ -201,7 +208,7 @@ class EditorView extends View {
    * @returns {string}
    */
   createResetButtonHtml() {
-    const {id} = this.state;
+    const {id, isDeleting} = this.state;
 
     if (id === 'draft') {
       return html`
@@ -210,7 +217,12 @@ class EditorView extends View {
     }
 
     return html`
-      <button class="event__reset-btn" type="reset">Delete</button>
+      <button
+        class="event__reset-btn  btn"
+        type="reset"
+        ${isDeleting ? 'disabled' : ''}>
+        ${isDeleting ? 'Deleting...' : 'Delete'}
+      </button>
     `;
   }
 
