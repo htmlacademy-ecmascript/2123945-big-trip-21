@@ -21,18 +21,18 @@ class FilterPresenter extends Presenter {
    */
   updateView() {
     /**
-     * @type{Array<FilterType>}
+     * @type {Array<FilterType>}
      */
     const values = ['everything', 'future', 'present', 'past'];
-    const { filter = 'everything' } = this.navigation.getParams();
+    const {filter = 'everything'} = this.navigation.getParams();
 
     const items = values.map((value) => ({
       value,
       isSelected: value === filter,
-      isDisabled: false,
+      isDisabled: !this.model.getPoints({filter: value}).length
     }));
 
-    this.view.setState({ items });
+    this.view.setState({items});
   }
 
   /**
@@ -44,7 +44,7 @@ class FilterPresenter extends Presenter {
    */
   onViewChange(event) {
     this.navigation.setParams({
-      filter: event.target.value,
+      filter: event.target.value
     });
   }
 }
