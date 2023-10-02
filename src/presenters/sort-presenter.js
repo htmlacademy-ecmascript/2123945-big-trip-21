@@ -37,11 +37,11 @@ class SortPresenter extends Presenter {
 
   /**
    * @param {Event & {
-    *  target: HTMLInputElement & {
-    *    value: SortType
-    *  }
-    * }} event
-    */
+   *  target: HTMLInputElement & {
+   *    value: SortType
+   *  }
+   * }} event
+   */
   onViewChange(event) {
     const params = this.navigation.getParams();
 
