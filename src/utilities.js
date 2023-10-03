@@ -102,12 +102,13 @@ function formatNumber(value) {
 
 /**
  * @param {Array<string>} items
+ * @param {number} ellipsisThreshold
  * @returns {string}
  */
-function formatList(items) {
+function formatList(items, ellipsisThreshold = 3) {
   items = structuredClone(items);
 
-  if (items.length > 3) {
+  if (items.length > ellipsisThreshold) {
     items.splice(1, items.length - 2, '...');
   }
 
